@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Download Buttons Example</title>
+    <style>
+        button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <h1>Multiple Download Buttons Example</h1>
+    <button id="downloadButton1">Download PDF 1</button>
+    <button id="downloadButton2">Download PDF 2</button>
+    <!-- Add more buttons as needed -->
+
+    <script>
+        function createDownloadButtonHandler(pdfPath) {
+            return function() {
+                // Create a link element and set its attributes
+                const link = document.createElement('a');
+                link.href = pdfPath;
+                link.target = '_blank';
+                link.download = pdfPath.substring(pdfPath.lastIndexOf('/') + 1); // Extract the file name from the path
+
+                // Append the link to the document and trigger the download
+                document.body.appendChild(link);
+                link.click();
+
+                // Remove the link from the document after the download is triggered
+                document.body.removeChild(link);
+            };
+        }
+
+        const downloadButton1 = document.getElementById('downloadButton1');
+        const downloadButton2 = document.getElementById('downloadButton2');
+        // Add more button variables as needed
+
+        // Attach event listeners to each button
+        downloadButton1.addEventListener('click', createDownloadButtonHandler('D:/university documents/application.pdf'));
+        downloadButton2.addEventListener('click', createDownloadButtonHandler('D:/university documents/bank slipt.pdf'));
+        // Add more event listeners as needed
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Responsive Assignment</title>
+<style>
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section {
+  position: relative;
+  float: left;
+  width: 33.33%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: #f2f2f2;
+  margin: 10px 0;
+}
+
+.section-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  background-color: #ffcc00;
+  color: black;
+}
+
+/* Media Queries for Tablet and Mobile */
+@media (max-width: 991px) {
+  .section {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    width: 100%;
+  }
+}
+
+    </style>
+
+</head>
+<body>
+  <div class="container">
+    <section class="section">
+      <div class="section-title">Chicken</div>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </section>
+    <section class="section">
+      <div class="section-title">Beef</div>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </section>
+    <section class="section">
+      <div class="section-title">Sushi</div>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </section>
+  </div>
+</body>
+</html>
